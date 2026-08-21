@@ -1,0 +1,56 @@
+body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTJR3aYvEJT5eBW4JSlcIPP95HT8R0EhvsO5_DqfV1t3tHeoR_eBPY4hZI&s=10');
+ background-repeat: no-repeat; 
+  background-size: cover; 
+}
+*{
+    box-sizing: border-box;
+}
+
+#ScoreBoard{
+    background-color: aqua;
+    width: 50%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    justify-self: center;
+}
+#divBtn{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px;
+height: 100px;
+}
+
+button{
+    width: 100px;
+    height:50px ;
+    margin:10px;
+    background-repeat: no-repeat; 
+  background-size: cover; 
+}
+#roundWinner{
+    display: flex;
+    border:2px solid aquamarine;
+    height: 200px;
+    width: 75%;
+    background-color: gray;
+    justify-content: center;
+    align-items: center;
+justify-self: center;
+}
+#RW{
+font-family: sans-serif;
+}
+#btnRock{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_zXyHU-3M2AOMYkbY0r0cOvG_exEl_x94uOPywSuzZfGacRe22ensI_U&s=10');
+}
+#btnPaper{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnj4429zQ54qPc_fT2PICyEOXI5yEQwOX6H6yAY1tFOg&s=10');
+}
+#btnScissors{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE0n4RB5bMSN9rOs6-tjN5_ko-WkPVm4w1SZie8n2j9WDp4dc42t8gHxc&s=10');
+}
