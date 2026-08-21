@@ -1,6 +1,9 @@
 let HumanScore = 0;
    let ComputerScore = 0;
 
+const btnRock = document.querySelector("#btnRock");
+const btnPaper = document.querySelector("#btnPaper");
+const btnScissors = document.querySelector("#btnScissors");
 
 function getComputerChoice(){
 let number=Math.floor(Math.random() * (3 - 1 + 1)) + 1;
@@ -17,13 +20,28 @@ if(number==1){
 
     return ComputerGet;
 }
+btnRock.addEventListener("click", () =>{
+    let HumanChoice = getHumanChoice("Rock");
+    PlayRound(HumanChoice, getComputerChoice());
+});
+btnPaper.addEventListener("click",()=>{
+    let HumanChoice = getHumanChoice("Paper");
+     PlayRound(HumanChoice, getComputerChoice());
+});
+
+btnScissors.addEventListener("click",()=>{
+let HumanChoice = getHumanChoice("Scissors");
+ PlayRound(HumanChoice, getComputerChoice());
+});
 
 
-function getHumanChoice(){
-let HumanGet = prompt("input Rock Paper or Scissors");
-HumanGet=HumanGet.charAt(0).toUpperCase() + HumanGet.slice(1).toLowerCase();
+function getHumanChoice(HumanGet){
 return HumanGet;
 }
+
+
+
+
 
 
 
@@ -31,43 +49,20 @@ function PlayRound(HumanGet, ComputerGet){
     let RW=0;
 if(HumanGet=='Rock' && ComputerGet=='Scissors' ||HumanGet=='Paper' && ComputerGet=='Rock' || HumanGet=='Scissors' && ComputerGet=='Paper'){
      HumanScore+=1;
-     RW+=1;
+    console.log(`YOU WIN!!! ${HumanGet} beats ${ComputerGet}`); 
 }
 else if(HumanGet==ComputerGet){
     HumanScore+=0;
     ComputerScore+=0;
+    console.log("TIE!!! nobody wins");
 }
 else{
     ComputerScore+=1;
-    RW-=1
-}
-
-if(RW==1){
-    console.log(`YOU WIN!!! ${HumanGet} beats ${ComputerGet}`); 
-}
-if(RW==-1){
-   console.log(`YOU LOSE!!! ${ComputerGet} beats ${HumanGet}`); 
-}
-if(RW==0){
-    console.log("TIE!!! nobody wins");
+    
+     console.log(`YOU LOSE!!! ${ComputerGet} beats ${HumanGet}`); 
 }
 
 }
 
 
-function PlayGame(){
-    HumanScore = 0;
-   ComputerScore = 0;
-    for(let i=0;i<5;i++){
-PlayRound(getHumanChoice(), getComputerChoice());
-    }
-
-if(HumanScore>ComputerScore){
-console.log("human wins");
-}
-else{
-    console.log("computerWins");
-}
-}
-PlayGame();
 
